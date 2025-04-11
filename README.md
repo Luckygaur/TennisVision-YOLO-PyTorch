@@ -1,25 +1,80 @@
+🎾 TennisVision: Real-Time Tennis Match Analysis using YOLO & PyTorch
+TennisVision is a real-time video analysis system built using YOLO for object detection and PyTorch for deep learning. It processes match footage to detect players and the ball, identify court regions, and derive insightful statistics for performance evaluation.
 
-# Tennis Analysis
+📌 Key Features
+🎯 Player & Ball Detection
+Detects and tracks tennis players and the ball using YOLOv8 and YOLOv5.
 
-## Introduction
-This project analyzes Tennis players in a video to measure their speed, ball shot speed and number of shots. This project will detect players and the tennis ball using YOLO and also utilizes CNNs to extract court keypoints. This hands on project is perfect for polishing your machine learning, and computer vision skills. 
+Trained YOLOv5 Model
+
+🧠 Court Keypoint Extraction
+Uses a custom CNN to identify court lines and extract keypoints for spatial understanding.
+
+Trained Tennis Court Key Point Model
+
+📊 Match Analytics
+Calculates metrics like player speed, shot speed, court coverage, and shot counts.
+
+📽️ Annotated Visual Output
+Draws bounding boxes, player trails, and court lines in real-time on output video.
+
+🧮 Shot and Movement Heatmaps
+Visualizes player movements and ball landings to study player patterns and strategy.
+
+🛠️ Tech Stack
+Frameworks & Libraries: PyTorch, OpenCV, NumPy, Matplotlib, Pandas
+
+Models:
+
+YOLOv8: Player detection
+
+YOLOv5: Tennis ball detection
+
+Custom CNN: Court keypoint detection
+
+Visualization: OpenCV overlay, heatmap generation
+
+🚀 Getting Started
+📦 Installation
+bash
+Copy
+Edit
+git clone https://github.com/Luckygaur/TennisVision-YOLO-PyTorch.git  
+cd TennisVision-YOLO-PyTorch  
+pip install -r requirements.txt  
+📹 Usage
+Add your match video(s) to the input_videos/ folder.
+
+Run the analysis:
+
+bash
+Copy
+Edit
+python main.py  
+Output videos with overlays will be saved in output_videos/.
+
+📁 Project Structure
+graphql
+Copy
+Edit
+TennisVision-YOLO-PyTorch/
+├── analysis/              # Core analytics scripts
+├── constants/             # Constant values used across modules
+├── court_line_detector/   # CNN-based court keypoint extraction
+├── input_videos/          # Folder for raw match input videos
+├── output_videos/         # Annotated output videos
+├── models/                # YOLO and CNN model files
+├── runs/                  # YOLO detect outputs
+├── utils/                 # Helper functions and utilities
+├── main.py                # Entry point script
+└── requirements.txt       # Project dependencies
+🧪 Sample Output Preview
+Insert sample screenshots or video gif of detection + stats overlay here
 
 ## Output Videos
 Here is a screenshot from one of the output videos:
 
 ![Screenshot](output_videos/screenshot.jpeg)
-
-## Models Used
-* YOLO v8 for player detection
-* Fine Tuned YOLO for tennis ball detection
-* Court Key point extraction
-
-* Trained YOLOV5 model: https://drive.google.com/file/d/1UZwiG1jkWgce9lNhxJ2L0NVjX1vGM05U/view?usp=sharing
-* Trained tennis court key point model: https://drive.google.com/file/d/1QrTOF1ToQ4plsSZbkBs3zOLkVt3MBlta/view?usp=sharing
-
-## Training
-* Tennis ball detetcor with YOLO: training/tennis_ball_detector_training.ipynb
-* Tennis court keypoint with Pytorch: training/tennis_court_keypoints_training.ipynb
 
 ## Requirements
 * python3.8
